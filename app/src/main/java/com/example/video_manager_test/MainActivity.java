@@ -26,6 +26,7 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
+    //https://androidhands.com/android-login-and-registration-using-php-and-mysql/
     MaterialEditText email,password;
     Button register,login;
     CheckBox checkedStatus;
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(new Intent(MainActivity.this,AppSatartActivity.class));
             finish();
         }
-
 
         login = findViewById(R.id.login);
         login.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
 
     private void login(final String email, final String password){
         final ProgressDialog progressDialog = new ProgressDialog(MainActivity.this);
@@ -122,5 +121,6 @@ public class MainActivity extends AppCompatActivity {
 
         request.setRetryPolicy(new DefaultRetryPolicy(30000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         MySingleton.getmInstance(MainActivity.this).addToRequestQueue(request);
+
     }
 }
